@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <div style={{ backgroundColor : "rgb(255, 255, 255, 0.5)" }}>
       <div className=" ui secondary menu">
         <div className="fill">
           <Link to="/">

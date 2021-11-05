@@ -15,8 +15,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="" style={{ marginTop: "10px" }}>
-      <div className="ui container">
+    <div className="" style={{ backgroundColor : "rgb(183, 226, 241)" }}>
+      <div className="ui container" style={{backgroundColor : "rgb(255, 255, 255, 0.5)"}}>
         <Navbar />
 
         <Slider {...settings}>
@@ -43,7 +43,7 @@ const Dashboard = () => {
           </div>
         </Slider>
 
-        <h2 style={{ textAlign: "center", marginBottom: "2%" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "2%"}}>
           Ceritakan tanpa khawatir.
         </h2>
         {/* Grid */}
