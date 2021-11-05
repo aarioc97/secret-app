@@ -1,28 +1,35 @@
 import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import { postThread } from "../redux/action";
+import { postThread } from "../redux/action/thread";
 import { submitFormAction } from "../redux/action/thread";
 
 const CreateThread = (props) => {
   const dispatch = useDispatch();
   const [inputThread, setInputThread] = useState("");
+  const [anonymous, setAnonymous] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = async () => {
+    // Empty form validation
     if (!inputThread) {
       setError("Please fill this thread.");
       return;
     }
 
-    const response = await postThread(inputThread, props.auth);
-    // console.log("response di createThread", response);
-    // validasi.
+    const response = await postThread(anonymous, inputThread, props.auth);
+
+    // empty the form after post
     setInputThread("");
     dispatch(submitFormAction(response));
   };
 
   const handleInputChange = (event) => {
     setInputThread(event.target.value);
+  };
+
+  const handleAnonymousChange = (event) => {
+    setAnonymous(event.target.checked);
+    return null;
   };
 
   return (
@@ -37,7 +44,7 @@ const CreateThread = (props) => {
                 src={
                   props.auth.profile ? props.auth.profile.getImageUrl() : null
                 }
-              ></img>
+              />
               <span style={{ fontSize: "0,8rem" }}>
                 {props.auth.profile ? props.auth.profile.getName() : null}
               </span>
@@ -59,6 +66,16 @@ const CreateThread = (props) => {
         <button onClick={handleSubmit} className="ui primary button">
           Share
         </button>
+        {/* Checklist make anonymous */}
+        <div className="ui checkbox" style={{ marginLeft: "2%" }}>
+          <input
+            type="checkbox"
+            onClick={handleAnonymousChange}
+            value={anonymous}
+            name="anonymous"
+          />
+          <label>Post as anonymous</label>
+        </div>
       </div>
     </div>
   );
