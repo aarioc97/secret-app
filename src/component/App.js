@@ -15,9 +15,11 @@ class App extends React.Component {
     console.log("[APP] props used on thread page: ", this.props);
 
     return (
-      <div className="ui container" style={{ marginTop: "10px" }}>
-        <Navbar />
-        <RenderThread />
+      <div className="" style={{ backgroundColor : "rgb(183, 226, 241)", overflow : "auto" }}>
+        <div className="ui container">
+          <Navbar />
+          <RenderThread />
+        </div>
       </div>
     );
   }

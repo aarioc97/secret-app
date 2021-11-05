@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div style={{ backgroundColor : "rgb(255, 255, 255, 0.5)" }}>
-      <div className=" ui secondary menu">
+      <div className=" ui secondary menu" style={{ marginTop: "10px" }}>
         <div className="fill">
           <Link to="/">
             <img

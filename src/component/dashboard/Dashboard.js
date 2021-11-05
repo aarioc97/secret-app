@@ -20,8 +20,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="" style={{ backgroundColor : "rgb(183, 226, 241)" }}>
-      <div className="ui container" style={{backgroundColor : "rgb(255, 255, 255, 0.5)"}}>
+    <div className="" style={{ backgroundColor : "rgb(183, 226, 241)", overflow : "auto" }}>
+      <div className="ui container" style={{ backgroundColor : "rgb(255, 255, 255, 0.5)" }}>
         <Navbar />
 
         <Slider style={{ display: block }} {...settings}>
